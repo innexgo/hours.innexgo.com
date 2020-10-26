@@ -10,6 +10,9 @@ import heroBg from "../img/homepage-bg.png";
 import kids_and_books from "../img/kids_and_books.png";
 import deal from "../img/deal.png";
 import contact from "../img/contact.png"
+import sample1 from '../img/sample1.mov';
+import sample2 from '../img/sample2.mov';
+import sample3 from '../img/sample3.mov';
 
 interface Props{};
 interface State{
@@ -68,6 +71,7 @@ class Home extends React.Component<Props, State> {
       float: tablet ? 'initial' : 'left',
       width: tablet ? '100%' : '50%',
       margin: tablet ? 'auto' : '10px auto',
+      padding: '10px',
     } as React.CSSProperties;
 
     return (
@@ -104,35 +108,53 @@ class Home extends React.Component<Props, State> {
 
             <Row>
               <div>
-                <div style={secondColumn}></div>
-                <div style={secondColumn} data-aos="fade-down" data-aos-duration="2000" data-aos-once="true">
+                <div style={secondColumn}>
+                  <video width='100%' height='50%' autoPlay loop style={{marginBottom: '20px'}}>
+                        <source src={sample1} type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div style={secondColumn}>
                   <h5>Organized calendar</h5>
                   <p>Teachers and students can see all of their office hour appointments in a simple
-                    and clear calendar, private to them and showing only their own appointments.
+                    and clear calendar, private to them and showing only their own appointments. The
+                    calendar has both weekly and daily view options. Events display times, student name,
+                    and details added to the appointment.
                   </p>
                 </div>
               </div>
             </Row>
             <Row>
               <div>
-                <div style={secondColumn} data-aos="fade-down" data-aos-duration="2000" data-aos-once="true">
-                  <h5>Student logins</h5>
-                  <p>Students are able to log into their own Innexgo Hours portal and see all
-                    of their office hour appointments in one place without having to remember several
-                    logins for different office hour applications.
+                <div style={secondColumn}>
+                  <h5>All your students in one place</h5>
+                  <p>No more sending links that can be shared to everyone, or a messy shared calendar - 
+                    you and your student decide on one appointment, and you see all of your appointments in one place. On the student's
+                    side, they can see appointments &amp; requests from their teachers too.
                   </p>
                 </div>
-                <div style={secondColumn}></div>
+                <div style={secondColumn}>
+                  <video width='100%' height='50%' autoPlay loop style={{marginBottom: '20px'}}>
+                        <source src={sample2} type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
               </div>
             </Row>
             <Row>
               <div>
-                <div style={secondColumn}></div>
-                <div style={secondColumn} data-aos="fade-down" data-aos-duration="2000" data-aos-once="true">
-                  <h5>Time Reports</h5>
-                  <p>Time that students spend in office hours is tracked to provide teachers and school 
-                    administrators helpful analytics that can be used to track attendance, as well as gauge 
-                    how students are performing and what type of help they need.
+                <div style={secondColumn}>
+                  <video width='100%' height='50%' autoPlay loop style={{marginBottom: '20px'}}>
+                        <source src={sample3} type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div style={secondColumn}>
+                  <h5>Track attendance</h5>
+                  <p>Time that students spend in office hours can provide teachers and school 
+                    administrators with helpful information for attendance &amp; students' needs.
+                    Every tutorial appointment has options to mark students present, tardy, or absent,
+                    which is later saved in the calendar and can be accessed by checking previous days/weeks.
                     </p>
                 </div>
               </div>
