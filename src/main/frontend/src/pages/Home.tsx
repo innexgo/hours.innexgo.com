@@ -92,7 +92,7 @@ class Home extends React.Component<Props, State> {
                     Using a simple portal and calendar system, students can easily seek help from their teachers, while teachers and adminstrators can track the time students are spending in office hours.</p>
                 
                   <p>Offering teachers and students the oppurtunity to participate in office hours ensures students' success with individualized help,
-                    and gives teachers the ability to focus on one student at a time. Innexgo Hours helps schools provide this additional method of support
+                    and gives teachers the chance to focus on one student at a time. Innexgo Hours helps schools provide this additional method of support
                     without the hassle of organizing several courses with hundreds of students, 
                     dealing with extra emails, or paying high prices for limited features.
                   </p>
@@ -100,6 +100,7 @@ class Home extends React.Component<Props, State> {
 
                 <div style={secondColumn} data-aos="fade-down" data-aos-duration="2000" data-aos-once="true">
                   <img src={kids_and_books}/>
+                  <p style={{marginLeft: '50%', fontSize: '10px', marginTop: '0'}}>from pch.vector</p>
                 </div>
               </div>
             </Row>
@@ -181,6 +182,7 @@ class Home extends React.Component<Props, State> {
                 margin: tablet ? 'auto' : '10px auto',
               }}>
                 <img src={deal} style={{width: '100%', height: '100%'}}/>
+                <p style={{textAlign: 'center', fontSize: '10px', marginTop: '3px'}}>from unitonvector</p>
               </div>
             </Row>
             <hr/>
@@ -218,6 +220,7 @@ class Home extends React.Component<Props, State> {
                 <div style={secondColumn} data-aos="fade-down" data-aos-duration="2400" data-aos-once="true"> 
                   <div style={{padding: '2px 15px'}}>
                     <img src={contact} style={{width: '100%', height: '100%'}}/>
+                    <p style={{textAlign: 'center', fontSize: '10px', marginTop: '4px'}}>from freepik</p>
                   </div>
                 </div>
 
