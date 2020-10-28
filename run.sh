@@ -1,5 +1,8 @@
 #!/bin/bash
 
-java -jar \
-  -Dserver.port=8079 \
-  ./build/libs/hours-0.0.1-SNAPSHOT.jar > ~/hours.innexgo.com.txt &
+# per deployment settings
+# check out application.properties
+# to see what env vars you need to export
+source settings.sh
+
+java -jar  ./build/libs/hours-0.0.1-SNAPSHOT.jar

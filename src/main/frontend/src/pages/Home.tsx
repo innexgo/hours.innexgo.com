@@ -10,9 +10,9 @@ import heroBg from "../img/homepage-bg.png";
 import kids_and_books from "../img/kids_and_books.png";
 import deal from "../img/deal.png";
 import contact from "../img/contact.png"
-import sample1 from '../img/sample1.mov';
-import sample2 from '../img/sample2.mov';
-import sample3 from '../img/sample3.mov';
+import sample1 from '../assets/sample1.webm';
+import sample2 from '../assets/sample2.webm';
+import sample3 from '../assets/sample3.webm';
 
 interface Props{};
 interface State{
