@@ -29,39 +29,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sendgrid.*;
-import com.sendgrid.helpers.mail.Mail;
-import com.sendgrid.helpers.mail.objects.*;
-
-import java.io.IOException;
-
 @CrossOrigin
 @RestController
 @RequestMapping(value = { "/api" })
 public class ApiController {
 
-  Logger logger = LoggerFactory.getLogger(ApiController.class);
+  @Autowired
+  MailService mailService;
 
   // This method updates the password for same user only
   @RequestMapping("/misc/contact/")
-  public ResponseEntity<?> updatePassword(@RequestParam("email") String email,
-      @RequestParam("password") String password, @RequestParam("school") String school) throws IOException {
+  public ResponseEntity<?> updatePassword( //
+      @RequestParam("email") String email, //
+      @RequestParam("school") String school //
+  ) {
 
-    Email from = new Email("contacts@innexgo.com");
-    String subject = "New Contact from:";
-    Email to = new Email("innexgo@gmail.com");
-    Content content = new Content("text/plain", school + " by " + email);
-    Mail mail = new Mail(from, subject, to, content);
-
-    SendGrid sg = new SendGrid(System.getenv("SENDGRID_API_KEY"));
-    Request request = new Request();
-    request.setMethod(Method.POST);
-    request.setEndpoint("mail/send");
-    request.setBody(mail.build());
-    Response response = sg.api(request);
-    System.out.println(response.getStatusCode());
-    System.out.println(response.getBody());
-    System.out.println(response.getHeaders());
+    mailService.send("innexgo@gmail.com", "Innexgo Sales: New Contact",
+        "New contact from form: <code>" + email + "</code> at <code>" + school + "</code>");
     return new ResponseEntity<>(HttpStatus.OK);
   }
 }
