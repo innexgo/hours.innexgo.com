@@ -18,9 +18,7 @@
 
 package innexgo.hours;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
 import com.amazonaws.regions.Regions;
@@ -36,9 +34,6 @@ import com.amazonaws.services.simpleemail.model.SendEmailRequest;
 
 @Service
 public class MailService {
-  @Autowired
-  private JdbcTemplate jdbcTemplate;
-
   @Value("${NOREPLY_EMAIL_ADDR}")
   private String emailAddr;
 
@@ -64,9 +59,4 @@ public class MailService {
     amazonSESClient.sendEmail(request);
   }
 
-  public boolean emailExistsInBlacklist(String email) {
-    String sql = "SELECT count(*) FROM email_blacklist WHERE email=?";
-    long count = jdbcTemplate.queryForObject(sql, Long.class, email);
-    return count != 0;
-  }
 }
