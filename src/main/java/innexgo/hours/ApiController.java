@@ -36,15 +36,14 @@ public class ApiController {
   // This method updates the password for same user only
   @RequestMapping("/misc/contact/")
   public ResponseEntity<?> contact( //
-      @RequestParam("name") String name, //
-      @RequestParam("email") String email, //
-      @RequestParam("school") String school, //
-      @RequestParam("position") String position, //
-      @RequestParam("message") String message//
+      @RequestParam String name, //
+      @RequestParam String email, //
+      @RequestParam String school, //
+      @RequestParam String position, //
+      @RequestParam String message//
   ) {
 
-    sendContactMail(new String[] { "gpimpale29@gmail.com", "innexgo@gmail.com" }, //
-        "Innexgo Sales: New Contact", //
+    sendMail("Innexgo Sales: New Contact", //
         "New contact from form:<br/>" + //
             "name: <code>" + name + "</code><br/>" + //
             "email: <code>" + email + "</code><br/>" + //
@@ -56,7 +55,22 @@ public class ApiController {
     return Errors.OK.getResponse();
   }
 
-  private void sendContactMail(String[] dests, String subject, String body) {
+  // This method updates the password for same user only
+  @RequestMapping("/misc/ref/")
+  public ResponseEntity<?> contact( //
+      @RequestParam String ref //
+  ) {
+
+    sendMail("Innexgo Sales: New Refer", //
+        "New site visit using:<br/>" + //
+            "refer code: <code>" + ref + "</code><br/>" 
+    );
+
+    return Errors.OK.getResponse();
+  }
+
+  private void sendMail(String subject, String body) {
+    String[] dests = new String[] { "gpimpale29@gmail.com", "innexgo@gmail.com" };
     for (String dest : dests) {
       mailService.send(dest, subject, body);
     }
