@@ -1,5 +1,5 @@
 plugins {
-  id 'org.springframework.boot' version '2.2.3.BUILD-SNAPSHOT'
+  id 'org.springframework.boot' version '2.6.0-SNAPSHOT'
   id 'java'
 }
 
@@ -8,7 +8,7 @@ apply plugin: 'eclipse'
 
 group = 'innexgo'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '8'
+sourceCompatibility = '17'
 
 repositories {
   mavenCentral()
@@ -26,5 +26,4 @@ dependencies {
   implementation 'org.springframework.boot:spring-boot-starter-tomcat'
   implementation 'org.springframework.boot:spring-boot-starter-websocket'
   implementation 'org.springframework.boot:spring-boot-starter-security'
-  implementation 'org.xerial:sqlite-jdbc:3.30.1'
 }
